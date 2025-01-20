@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Darker_Grotesque';
+    src: url('./assets/Darker_Grotesque/DarkerGrotesque-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Darker_Grotesque';
+    src: url('./assets/Darker_Grotesque/static/DarkerGrotesque-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('./assets/Lexend/Lexend-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: var(--primary-background);
+    font-family: 'Lexend';
+    color: white;
+}
+
+:root {
+    --primary-background: #143E05;
+    --primary-shadow: #006A33;
+    --primary: #009638;
+    --highlight: #00B737;
+}

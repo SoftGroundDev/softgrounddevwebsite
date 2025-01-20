@@ -176,7 +176,7 @@
 		z-index: 1;
 		height: 100%;
 		max-height: 60vh;
-		padding: 20px 0;
+		padding: 20px;
 		margin: 0 auto;
 	}
 

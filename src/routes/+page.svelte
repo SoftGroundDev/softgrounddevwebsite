@@ -1,23 +1,32 @@
 <script>
 	import KOStackedLogo from '../lib/SG_Logo+Tagline_Stacked_KO.svelte';
-	let videoEnded = false;
+	import '../lib/global.css';
+	// let videoEnded = false;
 
-	function handleVideoEnd() {
-		videoEnded = true;
-	}
+	// function handleVideoEnd() {
+	// 	videoEnded = true;
+	// }
 </script>
 
 <div class="hero">
 	<KOStackedLogo />
 	<div class="hero-filter"></div>
-	<video autoplay muted onended={handleVideoEnd} class="background-video">
+	<video autoplay loop muted class="background-video">
 		<source src="SoftgroundHero.mp4" type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
-	<!-- <img src="SG_Logo+Tagline_Stacked_KO.svg" alt="logo" class="logo" /> -->
 </div>
 
-<!-- <img src="Softground-Hero.gif" alt="Description of the GIF" /> -->
+<div class="container">
+	<h1>Empowering Communities Through Innovative Technology</h1>
+	<h2>
+		At Soft Ground, we build custom software solutions and foster tech-driven community growth
+	</h2>
+
+	<p>Contact me: <br /> schuster@softground.dev</p>
+	<!-- <button>Explore Our Services</button>
+	<button>Learn About Our Mission</button> -->
+</div>
 
 <style>
 	.background-video {
@@ -48,5 +57,29 @@
 		to {
 			opacity: 1;
 		}
+	}
+
+	.container {
+		max-width: 70vw;
+		margin: 0 auto;
+	}
+
+	h1,
+	h2,
+	p {
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 4rem;
+		font-family: 'Darker_Grotesque';
+		font-weight: 900;
+		margin: 20px;
+	}
+
+	h2 {
+		margin: 20px;
+		font-size: 2rem;
+		font-weight: normal;
 	}
 </style>
