@@ -1,38 +1,50 @@
 <script lang="ts">
-	let selectedService = '';
+	let submitting = false;
+	let submitStatus: 'idle' | 'success' | 'error' = 'idle';
+	let errorMessage = '';
 	let formData = {
 		name: '',
 		email: '',
 		company: '',
-		phone: '',
 		service: '',
-		timeline: '',
-		budget: '',
 		description: '',
 		referral: ''
 	};
 
-	function handleSubmit(event: Event) {
+	async function handleSubmit(event: Event) {
 		event.preventDefault();
+		submitting = true;
+		submitStatus = 'idle';
+		errorMessage = '';
 
-		// Construct mailto URL with form data
-		const subject = `Project Inquiry: ${formData.service || 'General Inquiry'}`;
-		const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-Phone: ${formData.phone}
-Service Interest: ${formData.service}
-Timeline: ${formData.timeline}
-Budget Range: ${formData.budget}
-How did you hear about us: ${formData.referral}
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(formData)
+			});
 
-Project Description:
-${formData.description}
-		`.trim();
+			const result = await response.json();
 
-		const mailtoUrl = `mailto:schuster@softground.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-		window.location.href = mailtoUrl;
+			if (!response.ok) {
+				throw new Error(result.error || 'Something went wrong.');
+			}
+
+			submitStatus = 'success';
+			formData = {
+				name: '',
+				email: '',
+				company: '',
+				service: '',
+				description: '',
+				referral: ''
+			};
+		} catch (err: unknown) {
+			submitStatus = 'error';
+			errorMessage = err instanceof Error ? err.message : 'Failed to submit. Please try again.';
+		} finally {
+			submitting = false;
+		}
 	}
 </script>
 
@@ -80,7 +92,7 @@ ${formData.description}
 					<h3>🎤 Tech Talk Augusta</h3>
 					<p class="method-value">Monthly Meetups</p>
 					<p class="method-description">Meet us in person at our community events</p>
-					<p class="response-time">📅 Third Thursday every month</p>
+					<p class="response-time">📅 First Tuesday of every month</p>
 				</div>
 
 				<div class="method-item">
@@ -127,16 +139,9 @@ ${formData.description}
 							<input type="email" id="email" bind:value={formData.email} required />
 						</div>
 
-						<div class="form-row">
-							<div class="form-group">
-								<label for="company">Company/Organization</label>
-								<input type="text" id="company" bind:value={formData.company} />
-							</div>
-
-							<div class="form-group">
-								<label for="phone">Phone</label>
-								<input type="tel" id="phone" bind:value={formData.phone} />
-							</div>
+						<div class="form-group">
+							<label for="company">Company/Organization</label>
+							<input type="text" id="company" bind:value={formData.company} />
 						</div>
 
 						<div class="form-group">
@@ -150,32 +155,6 @@ ${formData.description}
 								<option value="Maintenance Contract">Maintenance Contract</option>
 								<option value="Not Sure">Not Sure - Need Consultation</option>
 							</select>
-						</div>
-
-						<div class="form-row">
-							<div class="form-group">
-								<label for="timeline">Desired Timeline</label>
-								<select id="timeline" bind:value={formData.timeline}>
-									<option value="">Select timeline...</option>
-									<option value="ASAP">ASAP (Rush project)</option>
-									<option value="1-3 months">1-3 months</option>
-									<option value="3-6 months">3-6 months</option>
-									<option value="6+ months">6+ months</option>
-									<option value="Flexible">Flexible</option>
-								</select>
-							</div>
-
-							<div class="form-group">
-								<label for="budget">Budget Range</label>
-								<select id="budget" bind:value={formData.budget}>
-									<option value="">Select budget...</option>
-									<option value="Under $5k">Under $5,000</option>
-									<option value="$5k-$15k">$5,000 - $15,000</option>
-									<option value="$15k-$30k">$15,000 - $30,000</option>
-									<option value="$30k+">$30,000+</option>
-									<option value="Need estimate">Need estimate</option>
-								</select>
-							</div>
 						</div>
 
 						<div class="form-group">
@@ -202,12 +181,23 @@ ${formData.description}
 							</select>
 						</div>
 
-						<button type="submit" class="submit-button">Send Project Inquiry</button>
+						<button type="submit" class="submit-button" disabled={submitting}>
+							{submitting ? 'Sending...' : 'Send Project Inquiry'}
+						</button>
 
-						<p class="form-note">
-							This form will open your email client with the information pre-filled. You can review
-							and edit before sending.
-						</p>
+						{#if submitStatus === 'success'}
+							<p class="form-note success">
+								✅ Your inquiry has been submitted! We'll get back to you within 24 hours.
+							</p>
+						{:else if submitStatus === 'error'}
+							<p class="form-note error">
+								❌ {errorMessage}
+							</p>
+						{:else}
+							<p class="form-note">
+								Your information will be sent directly to our team. We'll respond within 24 hours.
+							</p>
+						{/if}
 					</form>
 				</div>
 			</div>
@@ -268,72 +258,20 @@ ${formData.description}
 		</div>
 	</section>
 
-	<!-- Local Business Focus -->
-	<section class="local-focus">
-		<div class="container">
-			<h2>🏛️ Proudly Serving Augusta, Georgia</h2>
-			<div class="local-content">
-				<div class="local-text">
-					<h3>Why Local Matters</h3>
-					<p>
-						We believe the best business relationships are built face-to-face. By focusing
-						exclusively on Augusta and the surrounding area, we can provide personalized service
-						that larger, distant firms simply can't match.
-					</p>
-
-					<div class="local-benefits">
-						<h4>Augusta Business Advantages:</h4>
-						<ul>
-							<li>Face-to-face meetings at your location</li>
-							<li>Understanding of local market dynamics</li>
-							<li>Quick response for urgent issues</li>
-							<li>Building lasting community relationships</li>
-							<li>Supporting local economic growth</li>
-							<li>Referrals within the Augusta business community</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="service-area">
-					<h3>Our Service Area</h3>
-					<div class="area-info">
-						<p><strong>Primary Focus:</strong> Augusta, Georgia</p>
-						<p>
-							<strong>Extended Area:</strong> Richmond County and immediate surrounding communities
-						</p>
-						<p>
-							<strong>Meeting Locations:</strong> Your office, coffee shops, co-working spaces, or our
-							location
-						</p>
-					</div>
-
-					<div class="meeting-preference">
-						<h4>Meeting Preferences:</h4>
-						<p>
-							We prefer in-person meetings for initial consultations and project kickoffs. This
-							helps us better understand your business context and build stronger working
-							relationships.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Response Expectations -->
 	<section class="response-expectations">
 		<div class="container">
 			<h2>What to Expect</h2>
 			<div class="expectations-grid">
 				<div class="expectation-item">
-					<h3>⚡ Quick Response</h3>
+					<h3>Quick Response</h3>
 					<p>
 						We respond to all inquiries within 24 hours, usually much faster during business hours.
 					</p>
 				</div>
 
 				<div class="expectation-item">
-					<h3>🔍 Honest Assessment</h3>
+					<h3>Honest Assessment</h3>
 					<p>
 						We'll tell you if we're not the right fit for your project and recommend alternatives if
 						needed.
@@ -341,12 +279,12 @@ ${formData.description}
 				</div>
 
 				<div class="expectation-item">
-					<h3>📋 Clear Process</h3>
+					<h3>Clear Process</h3>
 					<p>No confusing technical jargon - we explain everything in plain business terms.</p>
 				</div>
 
 				<div class="expectation-item">
-					<h3>💰 Transparent Pricing</h3>
+					<h3>Transparent Pricing</h3>
 					<p>Fixed project costs discussed upfront with no hidden fees or surprise charges.</p>
 				</div>
 			</div>
@@ -551,12 +489,6 @@ ${formData.description}
 		margin-bottom: 20px;
 	}
 
-	.form-row {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 15px;
-	}
-
 	label {
 		display: block;
 		color: #2c3e50;
@@ -607,12 +539,28 @@ ${formData.description}
 		transform: translateY(-2px);
 	}
 
+	.submit-button:disabled {
+		background: #95a5a6;
+		cursor: not-allowed;
+		transform: none;
+	}
+
 	.form-note {
 		margin-top: 15px;
 		color: #7f8c8d;
 		font-size: 0.9rem;
 		text-align: center;
 		line-height: 1.5;
+	}
+
+	.form-note.success {
+		color: #27ae60;
+		font-weight: 600;
+	}
+
+	.form-note.error {
+		color: #e74c3c;
+		font-weight: 600;
 	}
 
 	/* Quick Questions */
@@ -694,95 +642,6 @@ ${formData.description}
 		font-size: 0.95rem;
 	}
 
-	/* Local Focus */
-	.local-focus {
-		padding: 80px 0;
-		background: white;
-	}
-
-	.local-focus h2 {
-		color: #2c3e50;
-		font-size: 2.5rem;
-		text-align: center;
-		margin-bottom: 50px;
-		font-family: 'Darker_Grotesque', sans-serif;
-		font-weight: 700;
-	}
-
-	.local-content {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 50px;
-		align-items: start;
-	}
-
-	.local-text h3,
-	.service-area h3 {
-		color: #27ae60;
-		margin-bottom: 20px;
-		font-size: 1.4rem;
-	}
-
-	.local-text p,
-	.service-area p {
-		color: #5a6c7d;
-		line-height: 1.6;
-		margin-bottom: 20px;
-	}
-
-	.local-benefits {
-		background: #f8f9fa;
-		padding: 25px;
-		border-radius: 10px;
-		margin-top: 25px;
-	}
-
-	.local-benefits h4 {
-		color: #2c3e50;
-		margin-bottom: 15px;
-	}
-
-	.local-benefits ul {
-		color: #5a6c7d;
-		line-height: 1.6;
-	}
-
-	.local-benefits li {
-		margin-bottom: 8px;
-	}
-
-	.area-info {
-		background: #f8f9fa;
-		padding: 20px;
-		border-radius: 8px;
-		margin-bottom: 20px;
-	}
-
-	.area-info p {
-		margin-bottom: 10px;
-	}
-
-	.area-info strong {
-		color: #2c3e50;
-	}
-
-	.meeting-preference {
-		background: rgba(39, 174, 96, 0.1);
-		padding: 20px;
-		border-radius: 8px;
-		border-left: 4px solid #27ae60;
-	}
-
-	.meeting-preference h4 {
-		color: #2c3e50;
-		margin-bottom: 10px;
-	}
-
-	.meeting-preference p {
-		color: #5a6c7d;
-		line-height: 1.6;
-	}
-
 	/* Response Expectations */
 	.response-expectations {
 		padding: 80px 0;
@@ -840,14 +699,9 @@ ${formData.description}
 		}
 
 		.inquiry-content,
-		.questions-content,
-		.local-content {
+		.questions-content {
 			grid-template-columns: 1fr;
 			gap: 40px;
-		}
-
-		.form-row {
-			grid-template-columns: 1fr;
 		}
 
 		.expectations-grid {
@@ -857,7 +711,6 @@ ${formData.description}
 		.contact-methods,
 		.project-inquiry,
 		.quick-questions,
-		.local-focus,
 		.response-expectations {
 			padding: 60px 0;
 		}

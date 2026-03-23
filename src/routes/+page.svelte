@@ -8,6 +8,14 @@
 	// }
 </script>
 
+<svelte:head>
+	<title>Soft Ground | Augusta, Georgia Software Development & Community Tech</title>
+	<meta
+		name="description"
+		content="Soft Ground builds affordable custom software for Augusta, Georgia businesses. AI implementation, app development, infrastructure solutions, and the home of Tech Talk Augusta."
+	/>
+</svelte:head>
+
 <div class="hero">
 	<KOStackedLogo />
 	<div class="hero-filter"></div>
@@ -26,6 +34,20 @@
 		<h3>🏛️ Proudly Serving Augusta, Georgia</h3>
 	</div>
 </div>
+
+<!-- Brand Illustration Section -->
+<section class="brand-illustration">
+	<div class="illustration-wrapper">
+		<img
+			src="SoftGround Growing Computer.png"
+			alt="Retro computer with SoftGround on screen, intertwined with growing vines — representing the fusion of technology and organic community growth"
+			class="hero-illustration"
+		/>
+	</div>
+	<div class="illustration-tagline">
+		<p>Technology rooted in community. Growth powered by code.</p>
+	</div>
+</section>
 
 <!-- Value Proposition Section -->
 <section class="value-proposition">
@@ -94,53 +116,6 @@
 			</div>
 			<div class="community-cta">
 				<a href="/community" class="button">Learn More</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- AI Implementation Section -->
-<section class="ai-implementation">
-	<div class="container">
-		<div class="ai-header">
-			<div class="ai-icon">🤖</div>
-			<h2>AI Implementation</h2>
-		</div>
-		<p class="ai-subtitle">
-			Leverage AI agents and automation to streamline your business processes
-		</p>
-
-		<div class="ai-content">
-			<div class="what-we-do">
-				<h3>What We Do:</h3>
-				<ul class="ai-services-list">
-					<li>
-						<strong>AI Agents:</strong> Custom AI assistants for customer service, data processing, and
-						workflow automation
-					</li>
-					<li>
-						<strong>Business Process Automation:</strong> Eliminate repetitive tasks and reduce manual
-						errors
-					</li>
-					<li>
-						<strong>Lead Generation Tools:</strong> AI-powered systems to identify and qualify potential
-						customers
-					</li>
-					<li>
-						<strong>Document Processing:</strong> Automated data extraction and analysis from business
-						documents
-					</li>
-				</ul>
-			</div>
-
-			<div class="perfect-for">
-				<h3>Perfect For:</h3>
-				<ul class="ai-benefits-list">
-					<li>Businesses spending hours on repetitive data entry</li>
-					<li>Companies wanting to improve customer response times</li>
-					<li>Organizations looking to scale without hiring more staff</li>
-					<li>Businesses wanting to leverage AI without massive investment</li>
-				</ul>
 			</div>
 		</div>
 	</div>
@@ -231,6 +206,86 @@
 		font-size: 1.5rem;
 		margin: 0;
 		text-align: center;
+	}
+
+	/* Brand Illustration Section */
+	.brand-illustration {
+		background: radial-gradient(ellipse at center, #1a4a0a 0%, #0d2804 60%, #091c02 100%);
+		padding: 80px 0 40px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.brand-illustration::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 80px;
+		background: linear-gradient(to bottom, var(--primary-background), transparent);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.brand-illustration::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 80px;
+		background: linear-gradient(to top, #f5f7fa, transparent);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.illustration-wrapper {
+		max-width: 650px;
+		width: 90%;
+		animation: floatIn 1.2s ease-out;
+	}
+
+	.hero-illustration {
+		width: 100%;
+		height: auto;
+		filter: drop-shadow(0 20px 40px rgba(0, 150, 56, 0.3));
+		transition: transform 0.6s ease;
+	}
+
+	.hero-illustration:hover {
+		transform: scale(1.03);
+	}
+
+	.illustration-tagline {
+		margin-top: 20px;
+		text-align: center;
+		z-index: 2;
+	}
+
+	.illustration-tagline p {
+		font-family: 'Darker_Grotesque', sans-serif;
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: #ffffff;
+		letter-spacing: 0.02em;
+		text-shadow: 0 2px 12px rgba(0, 150, 56, 0.5);
+		margin: 0;
+		opacity: 0.9;
+	}
+
+	@keyframes floatIn {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	/* Value Proposition Section */
@@ -366,153 +421,6 @@
 		text-align: center;
 	}
 
-	/* AI Implementation Section */
-	.ai-implementation {
-		background: linear-gradient(135deg, #2c5f41 0%, #1e4d35 100%);
-		color: white;
-		padding: 80px 0;
-		position: relative;
-		font-family:
-			'Lexend',
-			-apple-system,
-			BlinkMacSystemFont,
-			'Segoe UI',
-			sans-serif;
-	}
-
-	.ai-implementation::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: rgba(0, 0, 0, 0.1);
-		pointer-events: none;
-	}
-
-	.ai-header {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 20px;
-		margin-bottom: 30px;
-	}
-
-	.ai-icon {
-		font-size: 3rem;
-		background: rgba(255, 255, 255, 0.15);
-		padding: 20px;
-		border-radius: 50%;
-		backdrop-filter: blur(10px);
-		border: 2px solid rgba(255, 255, 255, 0.2);
-	}
-
-	.ai-implementation h2 {
-		color: #ffffff;
-		font-family: 'Darker_Grotesque', sans-serif;
-		font-size: 2.8rem;
-		font-weight: 800;
-		margin: 0;
-		text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-		letter-spacing: -0.02em;
-	}
-
-	.ai-subtitle {
-		font-size: 1.4rem;
-		color: #ffffff;
-		margin-bottom: 50px;
-		text-align: center;
-		font-weight: 400;
-		text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-		line-height: 1.4;
-		max-width: 800px;
-		margin-left: auto;
-		margin-right: auto;
-		opacity: 0.95;
-	}
-
-	.ai-content {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 60px;
-		margin-top: 40px;
-	}
-
-	.what-we-do,
-	.perfect-for {
-		background: rgba(255, 255, 255, 0.12);
-		padding: 40px;
-		border-radius: 20px;
-		backdrop-filter: blur(20px);
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-	}
-
-	.what-we-do h3,
-	.perfect-for h3 {
-		color: #ffffff;
-		font-family: 'Darker_Grotesque', sans-serif;
-		font-size: 2rem;
-		font-weight: 700;
-		margin-bottom: 25px;
-		text-align: left;
-		text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-		border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-		padding-bottom: 15px;
-		letter-spacing: -0.01em;
-	}
-
-	.ai-services-list,
-	.ai-benefits-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.ai-services-list li,
-	.ai-benefits-list li {
-		color: #ffffff;
-		line-height: 1.7;
-		margin-bottom: 20px;
-		padding-left: 30px;
-		position: relative;
-		font-size: 1.1rem;
-		font-weight: 400;
-		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-		opacity: 0.95;
-	}
-
-	.ai-services-list li::before {
-		content: '✓';
-		position: absolute;
-		left: 0;
-		color: #4ade80;
-		font-weight: bold;
-		font-size: 1.3rem;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-		top: -2px;
-	}
-
-	.ai-benefits-list li::before {
-		content: '▶';
-		position: absolute;
-		left: 0;
-		color: #60a5fa;
-		font-weight: bold;
-		font-size: 1.1rem;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-		top: 1px;
-	}
-
-	.ai-services-list li strong {
-		color: #ffffff;
-		font-weight: 600;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-		font-family: 'Darker_Grotesque', sans-serif;
-		font-size: 1.15rem;
-	}
-
 	/* CTA Section */
 	.cta-section {
 		background: #34495e;
@@ -599,6 +507,19 @@
 			font-size: 1.5rem;
 		}
 
+		.brand-illustration {
+			padding: 50px 0 30px;
+		}
+
+		.illustration-wrapper {
+			max-width: 90%;
+		}
+
+		.illustration-tagline p {
+			font-size: 1.3rem;
+			padding: 0 20px;
+		}
+
 		.value-grid,
 		.services-grid {
 			grid-template-columns: 1fr;
@@ -606,46 +527,6 @@
 
 		.community-content {
 			grid-template-columns: 1fr;
-		}
-
-		.ai-content {
-			grid-template-columns: 1fr;
-			gap: 30px;
-		}
-
-		.ai-header {
-			flex-direction: column;
-			gap: 15px;
-		}
-
-		.ai-implementation h2 {
-			font-size: 2.2rem;
-		}
-
-		.ai-subtitle {
-			font-size: 1.2rem;
-			padding: 0 20px;
-		}
-
-		.what-we-do,
-		.perfect-for {
-			padding: 30px 25px;
-		}
-
-		.what-we-do h3,
-		.perfect-for h3 {
-			font-size: 1.7rem;
-		}
-
-		.ai-services-list li,
-		.ai-benefits-list li {
-			font-size: 1.05rem;
-			line-height: 1.6;
-			padding-left: 28px;
-		}
-
-		.ai-services-list li strong {
-			font-size: 1.1rem;
 		}
 
 		.cta-buttons {

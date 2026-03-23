@@ -27,7 +27,11 @@
 		<div class="container">
 			<div class="tech-talk-content">
 				<div class="tech-talk-info">
-					<h2>🎤 Tech Talk Augusta</h2>
+					<h2>
+						🎤 <a href="https://techtalkaugusta.com" target="_blank" rel="noopener noreferrer"
+							>Tech Talk Augusta</a
+						>
+					</h2>
 					<p class="section-subtitle">Monthly meetups connecting local tech professionals</p>
 
 					<h3>What is Tech Talk Augusta?</h3>
@@ -69,11 +73,11 @@
 					<div class="meetup-info">
 						<div class="info-item">
 							<h4>📅 When</h4>
-							<p>Third Thursday of every month<br />6:30 PM - 8:00 PM</p>
+							<p>First Tuesday of every month<br />7 PM - 9PM</p>
 						</div>
 						<div class="info-item">
 							<h4>📍 Where</h4>
-							<p>Location varies<br />Always in Augusta area<br />Details sent to attendees</p>
+							<p>Jessye Norman School of the Arts</p>
 						</div>
 						<div class="info-item">
 							<h4>💰 Cost</h4>
@@ -83,12 +87,6 @@
 							<h4>👥 Who</h4>
 							<p>Developers, business owners, students, and anyone interested in technology</p>
 						</div>
-					</div>
-					<div class="meetup-cta">
-						<a
-							href="mailto:schuster@softground.dev?subject=Tech Talk Augusta Interest"
-							class="button primary">Get Notified of Next Event</a
-						>
 					</div>
 				</div>
 			</div>
@@ -111,27 +109,27 @@
 					<h3>What We're Accomplishing:</h3>
 					<div class="accomplishments">
 						<div class="accomplishment-item">
-							<h4>🤝 Connecting Professionals</h4>
+							<h4>Connecting Professionals</h4>
 							<p>
 								Regular meetups have created lasting professional relationships and collaboration
 								opportunities
 							</p>
 						</div>
 						<div class="accomplishment-item">
-							<h4>📚 Knowledge Sharing</h4>
+							<h4>Knowledge Sharing</h4>
 							<p>
 								Open discussions about tools, techniques, and best practices benefit everyone's
 								growth
 							</p>
 						</div>
 						<div class="accomplishment-item">
-							<h4>🎯 Career Development</h4>
+							<h4>Career Development</h4>
 							<p>
 								Mentorship and guidance for people transitioning into or advancing in tech careers
 							</p>
 						</div>
 						<div class="accomplishment-item">
-							<h4>💼 Business Education</h4>
+							<h4>Business Education</h4>
 							<p>
 								Helping local business owners understand how technology can solve their challenges
 							</p>
@@ -140,23 +138,23 @@
 				</div>
 
 				<div class="impact-stats">
-					<h3>By the Numbers</h3>
+					<h3>Community Milestones</h3>
 					<div class="stats-grid">
 						<div class="stat-item">
-							<div class="stat-number">Monthly</div>
-							<div class="stat-label">Meetup Schedule</div>
+							<div class="stat-number">24+</div>
+							<div class="stat-label">Meetups Hosted</div>
 						</div>
 						<div class="stat-item">
-							<div class="stat-number">All Levels</div>
-							<div class="stat-label">Welcome</div>
+							<div class="stat-number">2+</div>
+							<div class="stat-label">Years Running</div>
 						</div>
 						<div class="stat-item">
-							<div class="stat-number">100%</div>
-							<div class="stat-label">Free Events</div>
+							<div class="stat-number">Free</div>
+							<div class="stat-label">Always, for Everyone</div>
 						</div>
 						<div class="stat-item">
-							<div class="stat-number">Augusta</div>
-							<div class="stat-label">Focused</div>
+							<div class="stat-number">Local</div>
+							<div class="stat-label">Augusta-First Community</div>
 						</div>
 					</div>
 				</div>
@@ -193,19 +191,19 @@
 					<h3>How We Create Opportunities</h3>
 					<div class="opportunities-grid">
 						<div class="opportunity-item">
-							<h4>🎓 Mentorship Programs</h4>
+							<h4>Mentorship Programs</h4>
 							<p>Connecting experienced professionals with newcomers for guidance and support</p>
 						</div>
 						<div class="opportunity-item">
-							<h4>🛠️ Real-World Projects</h4>
+							<h4>Real-World Projects</h4>
 							<p>Opportunities to contribute to actual business solutions with guidance</p>
 						</div>
 						<div class="opportunity-item">
-							<h4>🗣️ Speaking Opportunities</h4>
+							<h4>Speaking Opportunities</h4>
 							<p>Encouraging new voices to share their learning journey and fresh perspectives</p>
 						</div>
 						<div class="opportunity-item">
-							<h4>🤝 Collaborative Learning</h4>
+							<h4>Collaborative Learning</h4>
 							<p>Group projects and peer learning opportunities through meetup connections</p>
 						</div>
 					</div>
@@ -228,10 +226,7 @@
 						<li>Share job opportunities with the community</li>
 						<li>Collaborate on community projects</li>
 					</ul>
-					<a
-						href="mailto:schuster@softground.dev?subject=Tech Professional - Community Involvement"
-						class="button secondary">Connect as a Professional</a
-					>
+					<a href="/contact" class="button secondary">Connect as a Professional</a>
 				</div>
 
 				<div class="involvement-item">
@@ -243,10 +238,7 @@
 						<li>Sponsor meetup events to support the community</li>
 						<li>Host events at your location</li>
 					</ul>
-					<a
-						href="mailto:schuster@softground.dev?subject=Business Owner - Community Involvement"
-						class="button secondary">Connect as a Business</a
-					>
+					<a href="/contact" class="button secondary">Connect as a Business</a>
 				</div>
 
 				<div class="involvement-item">
@@ -258,10 +250,7 @@
 						<li>Participate in community projects</li>
 						<li>Connect with potential employers</li>
 					</ul>
-					<a
-						href="mailto:schuster@softground.dev?subject=Aspiring Tech Worker - Getting Started"
-						class="button secondary">Get Started</a
-					>
+					<a href="/contact" class="button secondary">Get Started</a>
 				</div>
 			</div>
 		</div>
@@ -273,19 +262,16 @@
 			<h2>Stay Connected</h2>
 			<div class="events-content">
 				<div class="newsletter-signup">
-					<h3>📧 Get Event Notifications</h3>
+					<h3>📧 Get Involved</h3>
 					<p>
 						Stay informed about upcoming Tech Talk Augusta events, special workshops, and community
-						announcements.
+						announcements. Visit <a
+							href="https://techtalkaugusta.com"
+							target="_blank"
+							rel="noopener noreferrer">techtalkaugusta.com</a
+						>
+						or <a href="/contact">reach out to us</a> to get connected.
 					</p>
-					<div class="signup-form">
-						<p>
-							Email us at <a
-								href="mailto:schuster@softground.dev?subject=Tech Talk Augusta Notifications"
-								>schuster@softground.dev</a
-							> with "Tech Talk Augusta Notifications" in the subject line to join our mailing list.
-						</p>
-					</div>
 				</div>
 
 				<div class="community-values">
@@ -312,10 +298,12 @@
 			</p>
 			<div class="cta-buttons">
 				<a
-					href="mailto:schuster@softground.dev?subject=Tech Talk Augusta Interest"
+					href="https://techtalkaugusta.com"
+					target="_blank"
+					rel="noopener noreferrer"
 					class="button primary">Join Tech Talk Augusta</a
 				>
-				<a href="/contact" class="button secondary">Learn More</a>
+				<a href="/contact" class="button secondary">Contact Us</a>
 			</div>
 		</div>
 	</section>
@@ -471,10 +459,6 @@
 		color: #5a6c7d;
 		line-height: 1.5;
 		font-size: 0.95rem;
-	}
-
-	.meetup-cta {
-		text-align: center;
 	}
 
 	/* Impact Section */
@@ -727,20 +711,19 @@
 		font-size: 1.4rem;
 	}
 
-	.newsletter-signup p,
-	.signup-form p {
+	.newsletter-signup p {
 		color: #5a6c7d;
 		line-height: 1.6;
 		margin-bottom: 20px;
 	}
 
-	.signup-form a {
+	.newsletter-signup a {
 		color: #27ae60;
 		text-decoration: none;
 		font-weight: 600;
 	}
 
-	.signup-form a:hover {
+	.newsletter-signup a:hover {
 		text-decoration: underline;
 	}
 
@@ -814,11 +797,21 @@
 
 	.button.secondary {
 		background: transparent;
-		color: white;
-		border: 2px solid white;
+		color: #27ae60;
+		border: 2px solid #27ae60;
 	}
 
 	.button.secondary:hover {
+		background: #27ae60;
+		color: white;
+	}
+
+	.community-cta .button.secondary {
+		color: white;
+		border-color: white;
+	}
+
+	.community-cta .button.secondary:hover {
 		background: white;
 		color: #2c3e50;
 	}

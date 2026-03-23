@@ -80,15 +80,15 @@
 						<h3>Key Benefits</h3>
 						<div class="feature-list">
 							<div class="feature-item">
-								<h4>📈 Immediate ROI</h4>
+								<h4>Immediate ROI</h4>
 								<p>See results in weeks, not months</p>
 							</div>
 							<div class="feature-item">
-								<h4>🎯 Custom Solutions</h4>
+								<h4>Custom Solutions</h4>
 								<p>Tailored to your specific business needs</p>
 							</div>
 							<div class="feature-item">
-								<h4>📚 Training Included</h4>
+								<h4>Training Included</h4>
 								<p>Your team learns to use and maintain the system</p>
 							</div>
 						</div>
@@ -135,15 +135,15 @@
 						<h3>Why Choose Us</h3>
 						<div class="feature-list">
 							<div class="feature-item">
-								<h4>🔒 Enterprise Security</h4>
+								<h4>Enterprise Security</h4>
 								<p>Bank-level security for your business data</p>
 							</div>
 							<div class="feature-item">
-								<h4>📊 Cost Optimization</h4>
+								<h4>Cost Optimization</h4>
 								<p>Pay only for what you use, scale as needed</p>
 							</div>
 							<div class="feature-item">
-								<h4>🛡️ 99.9% Uptime</h4>
+								<h4>99.9% Uptime</h4>
 								<p>Reliable systems that keep your business running</p>
 							</div>
 						</div>
@@ -185,15 +185,15 @@
 						<h3>Our Approach</h3>
 						<div class="feature-list">
 							<div class="feature-item">
-								<h4>🎨 User-Friendly Design</h4>
+								<h4>User-Friendly Design</h4>
 								<p>Intuitive interfaces that your team will love</p>
 							</div>
 							<div class="feature-item">
-								<h4>📱 Mobile-First</h4>
+								<h4>Mobile-First</h4>
 								<p>Works perfectly on phones, tablets, and desktops</p>
 							</div>
 							<div class="feature-item">
-								<h4>🔄 Iterative Development</h4>
+								<h4>Iterative Development</h4>
 								<p>Regular updates and feedback throughout the process</p>
 							</div>
 						</div>
@@ -238,15 +238,15 @@
 						<h3>What You Get</h3>
 						<div class="feature-list">
 							<div class="feature-item">
-								<h4>📋 Detailed Reports</h4>
+								<h4>Detailed Reports</h4>
 								<p>Clear documentation of recommendations</p>
 							</div>
 							<div class="feature-item">
-								<h4>🎯 Actionable Plans</h4>
+								<h4>Actionable Plans</h4>
 								<p>Step-by-step implementation roadmaps</p>
 							</div>
 							<div class="feature-item">
-								<h4>💡 Ongoing Support</h4>
+								<h4>Ongoing Support</h4>
 								<p>Continued guidance as your project evolves</p>
 							</div>
 						</div>
@@ -270,18 +270,18 @@
 
 					<div class="pricing-highlights">
 						<div class="pricing-item">
-							<h4>⏰ 3-Month Timeline</h4>
+							<h4>3-Month Timeline</h4>
 							<p>
 								Most projects completed within 3 months, giving you quick results and predictable
 								planning.
 							</p>
 						</div>
 						<div class="pricing-item">
-							<h4>💰 Upfront Pricing</h4>
+							<h4>Upfront Pricing</h4>
 							<p>Fixed project costs discussed and agreed upon before work begins.</p>
 						</div>
 						<div class="pricing-item">
-							<h4>🔧 $100/Month Maintenance</h4>
+							<h4>$100/Month Maintenance</h4>
 							<p>Ongoing support, updates, and peace of mind for just $100 per month.</p>
 						</div>
 					</div>
@@ -469,7 +469,7 @@
 	}
 
 	.service-section:nth-child(even) {
-		background: #f8f9fa;
+		background: #152d46;
 	}
 
 	.service-content {
@@ -492,7 +492,7 @@
 	}
 
 	.service-text h2 {
-		color: #2c3e50;
+		color: #4d99e6;
 		font-size: 2.2rem;
 		margin-bottom: 15px;
 		font-family: 'Darker_Grotesque', sans-serif;
@@ -507,14 +507,14 @@
 	}
 
 	.service-text h3 {
-		color: #2c3e50;
+		color: #25629e;
 		font-size: 1.4rem;
 		margin: 25px 0 15px 0;
 		font-weight: 600;
 	}
 
 	.service-text ul {
-		color: #5a6c7d;
+		color: #9cb0c2;
 		line-height: 1.6;
 		margin-bottom: 25px;
 	}
@@ -524,7 +524,7 @@
 	}
 
 	.service-text li strong {
-		color: #2c3e50;
+		color: #618cb8;
 	}
 
 	.service-features {

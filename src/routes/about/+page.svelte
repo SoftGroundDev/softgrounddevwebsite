@@ -101,8 +101,8 @@
 					<h3>Our Impact</h3>
 					<div class="stats-grid">
 						<div class="stat-item">
-							<div class="stat-number">2024</div>
-							<div class="stat-label">Founded</div>
+							<div class="stat-number">2+ yrs</div>
+							<div class="stat-label">Serving Augusta</div>
 						</div>
 						<div class="stat-item">
 							<div class="stat-number">3mo</div>
@@ -113,8 +113,8 @@
 							<div class="stat-label">Monthly Maintenance</div>
 						</div>
 						<div class="stat-item">
-							<div class="stat-number">100%</div>
-							<div class="stat-label">Augusta Focused</div>
+							<div class="stat-number">24+</div>
+							<div class="stat-label">Community Meetups</div>
 						</div>
 					</div>
 				</div>
@@ -167,19 +167,19 @@
 					<h3>Our Approach</h3>
 					<div class="approach-items">
 						<div class="approach-item">
-							<h4>📋 Documentation-Heavy</h4>
+							<h4>Documentation-Heavy</h4>
 							<p>Clear processes and thorough documentation for every project</p>
 						</div>
 						<div class="approach-item">
-							<h4>🔄 Process Automation</h4>
+							<h4>Process Automation</h4>
 							<p>Leveraging automation to reduce costs and improve efficiency</p>
 						</div>
 						<div class="approach-item">
-							<h4>💬 Asynchronous Communication</h4>
+							<h4>Asynchronous Communication</h4>
 							<p>Flexible communication that respects your time and schedule</p>
 						</div>
 						<div class="approach-item">
-							<h4>🎯 Focus on Value</h4>
+							<h4>Focus on Value</h4>
 							<p>Targeting "low-hanging fruit" that provides immediate business impact</p>
 						</div>
 					</div>

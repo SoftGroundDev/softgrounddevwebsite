@@ -47,7 +47,7 @@
 
 		<div class="footer-bottom">
 			<div class="footer-bottom-content">
-				<p>&copy; 2024 Soft Ground. All rights reserved.</p>
+				<p>&copy; 2026 Soft Ground. All rights reserved.</p>
 				<p class="tagline">Code can build community and communities can build impactful code</p>
 			</div>
 		</div>
