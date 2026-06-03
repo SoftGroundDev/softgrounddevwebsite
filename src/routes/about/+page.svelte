@@ -13,9 +13,14 @@
 <div class="about-page">
 	<!-- Hero Section -->
 	<section class="about-hero">
-		<div class="container">
-			<h1>About Soft Ground</h1>
-			<p class="hero-subtitle">Democratizing Technology in Augusta, Georgia</p>
+		<div class="container hero-container">
+			<div class="hero-text">
+				<h1>About Soft Ground</h1>
+				<p class="hero-subtitle">Democratizing Technology in Augusta, Georgia</p>
+			</div>
+			<div class="hero-media">
+				<img src="/vineman.png" alt="Vineman illustration" class="hero-image" />
+			</div>
 		</div>
 	</section>
 
@@ -243,7 +248,47 @@
 		background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
 		color: white;
 		padding: 80px 0 60px;
-		text-align: center;
+	}
+
+	.hero-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		align-items: center;
+	}
+
+	.hero-text {
+		text-align: left;
+	}
+
+	.hero-media {
+		width: 100%;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+	}
+
+	.hero-pdf {
+		width: 100%;
+		height: 100%;
+		display: block;
+		border: 0;
+	}
+
+	.hero-image {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	@media (max-width: 768px) {
+		.hero-container {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-text {
+			text-align: center;
+		}
 	}
 
 	.about-hero h1 {
