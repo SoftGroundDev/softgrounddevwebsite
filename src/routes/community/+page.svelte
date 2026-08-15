@@ -19,6 +19,13 @@
 			<div class="hero-highlight">
 				<p>"Code can build community and communities can build impactful code"</p>
 			</div>
+			<div class="hero-image-wrap">
+				<img
+					src="/garden-tech.jpeg"
+					alt="Tech community gathering in a garden setting"
+					class="hero-image"
+				/>
+			</div>
 		</div>
 	</section>
 
@@ -354,6 +361,20 @@
 		font-size: 1.2rem;
 		font-style: italic;
 		margin: 0;
+	}
+
+	.hero-image-wrap {
+		margin-top: 32px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.hero-image {
+		display: block;
+		width: min(100%, 760px);
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 10px 24px rgba(44, 62, 80, 0.25);
 	}
 
 	/* Tech Talk Section */

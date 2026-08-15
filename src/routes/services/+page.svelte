@@ -21,6 +21,9 @@
 				<div class="highlight">💰 Transparent Pricing</div>
 				<div class="highlight">🔧 $100/Month Maintenance</div>
 			</div>
+			<div class="hero-image-wrap">
+				<img src="/cord-beard.png" alt="Cord Beard from Soft Ground" class="hero-image" />
+			</div>
 		</div>
 	</section>
 
@@ -421,6 +424,19 @@
 		justify-content: center;
 		gap: 30px;
 		flex-wrap: wrap;
+	}
+
+	.hero-image-wrap {
+		margin-top: 32px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.hero-image {
+		width: min(100%, 420px);
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 10px 24px rgba(21, 45, 70, 0.2);
 	}
 
 	.highlight {
